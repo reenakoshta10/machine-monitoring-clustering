@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import csv
 
-def create_csv():
+def create_csv(machine_type):
     '''
     This function with create the csv file with all the audio file path and machine type
     Parameters:
@@ -15,10 +15,10 @@ def create_csv():
     '''
     header = ['filename', 'class']
 
-    with open('assets/data/audio_file_list.csv', 'w') as f:
+    with open('assets/data/'+machine_type+'_audio_file_list.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(header)
-        for name in glob('assets/data/audio_data/**/id_00/*/*.wav', recursive=True):
+        for name in glob('assets/data/audio_data/6_dB_'+machine_type+'/'+machine_type+'/**/*.wav', recursive=True):
             data = []
             arr = name.split('/')
             print(arr)
@@ -57,11 +57,11 @@ def mfcc_array(i:int,data:object, files)->object:
     filename = files['filename'][i]
     librosa_load = lb.load(str(filename),sr=None)
     audio, sample_rate = librosa_load
-    mfcc = lb.feature.mfcc(audio,sr=sample_rate,n_mfcc=2)
+    mfcc = lb.feature.mfcc(audio,sr=sample_rate,n_mfcc=5)
 #     mfcc = mfcc.flatten()
     mean = mfcc.mean(axis=1)
-    print("mean shape",mean.shape)
-    print("data shape",data.shape)
+#     print("mean shape",mean.shape)
+#     print("data shape",data.shape)
     if len(data) ==0:
         data = mean
     else:
@@ -95,20 +95,21 @@ def manageMfcc(files_list)->object:
           
     return data
 
+machine_name = input("Enter machine type : ")
 
 # Create Dataset to create model
-# create_csv()
-audio_files = pd.read_csv('assets/data/audio_file_list.csv')
+create_csv(machine_name)
+audio_files = pd.read_csv('assets/data/'+machine_name+'_audio_file_list.csv')
 data = fuse_target_mfcc(manageMfcc(audio_files),get_target(audio_files))
 df1 = pd.DataFrame(data)
 
-df1.to_csv("assets/data/audio_dataset.csv", header=None, index=False)
+df1.to_csv("assets/data/"+machine_name+"_audio_dataset.csv", header=None, index=False)
 
 # Create Dataset for model validation
 # create_validation_data_csv()
-validation_audio_files = pd.read_csv('assets/data/validation_file_list.csv')
-validation_data = fuse_target_mfcc(manageMfcc(validation_audio_files),get_target(validation_audio_files))
-df2 = pd.DataFrame(validation_data)
+# validation_audio_files = pd.read_csv('assets/data/validation_file_list.csv')
+# validation_data = fuse_target_mfcc(manageMfcc(validation_audio_files),get_target(validation_audio_files))
+# df2 = pd.DataFrame(validation_data)
     
-df2.to_csv("assets/data/validation_dataset.csv", header=None, index=False)
+# df2.to_csv("assets/data/validation_dataset.csv", header=None, index=False)
 
