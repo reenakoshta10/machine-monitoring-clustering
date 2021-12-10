@@ -51,11 +51,12 @@ machine-monitoring-clustering
 
 Sample clustering plot that we got after creating Kmean cluster on slider data.
 
-.[](assets/images/Kmean_sliders.png)
+![](assets/images/Kmean_sliders.png)
 
 ## Report
 
-For Detailed analysis report you can check the .[link](Report.pdf)
+For Detailed analysis report you can check the [link](Report.pdf).
+
 ## Contributors 
 
 This project is a cooperation of the following team:
@@ -65,4 +66,4 @@ This project is a cooperation of the following team:
 ## Timeline 
 
 December 2021.
-We had about 1 week for this challenge. We began our journey by understanding the challenge, what a sound was made of and the important features of sound. Then we made a script that organized the data. After that we modeled the data. 
+We had about 3 days for this challenge. We began our journey by understanding the challenge, what a sound was made of and the important features of sound. Then we made a script that organized the data. After that we modeled the data. 
