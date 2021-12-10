@@ -20,10 +20,10 @@ You can find the libraries that are required in `requirements.txt`
 `python collect_data.py`
 
 - For creating model for different machines:
-    -Run `machine_monitoring_fan.ipynb` for analysis and model creation for machine type fan.
-    -Run `machine_monitoring_pump.ipynb` for analysis and model creation for machine type pumps.
-    -Run `machine_monitoring_slider.ipynb` for analysis and model creation for machine type sliders.
-    -Run `machine_monitoring_valve.ipynb` for analysis and model creation for machine type valves.
+    - Run `machine_monitoring_fan.ipynb` for analysis and model creation for machine type fan.
+    - Run `machine_monitoring_pump.ipynb` for analysis and model creation for machine type pumps.
+    - Run `machine_monitoring_slider.ipynb` for analysis and model creation for machine type sliders.
+    - Run `machine_monitoring_valve.ipynb` for analysis and model creation for machine type valves.
 
 
 ## Repo Architecture
