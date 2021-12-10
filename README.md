@@ -32,16 +32,16 @@ machine-monitoring-clustering
 │__   
 │   assets              :contains the data files and images
 │   │__
-│   │   data              :contains dataset
+│   │   data            :contains dataset
 │   │__
-│   │   images              :contains images used in README_file
+│   │   images          :contains images used in README_file
 │
-│   README.md                   :explains the project
-│   collect_data.py             :this file will create dataset with audio file for training and testing model 
-│   machine_monitoring_fan.ipynb               :this will contain the list of all the normal audio file path and machine type 
+│   README.md                       :explains the project
+│   collect_data.py                 :this file will create dataset with audio file for training and testing model 
+│   machine_monitoring_fan.ipynb    :this will contain the list of all the normal audio file path and machine type 
 │   machine_monitoring_fan.ipynb    :this file will create model and validate it with validation data
-│   machine_monitoring_fan.ipynb                   :this is model which you can load for machine monitoring
-│   machine_monitoring_fan.ipynb     :this notebook contains the observation on normal audio file
+│   machine_monitoring_fan.ipynb    :this is model which you can load for machine monitoring
+│   machine_monitoring_fan.ipynb    :this notebook contains the observation on normal audio file
 │   README.md                   :explains the project
 │   requirements.txt            :contains list of python libraries required to run the project
 
